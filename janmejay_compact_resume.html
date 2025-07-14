@@ -1,0 +1,879 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Janmejay Kumar - Resume</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.4;
+            color: #333;
+            background: #fff;
+            font-size: 11px;
+        }
+
+        .container {
+            max-width: 210mm;
+            margin: 0 auto;
+            padding: 15mm;
+            background: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #2c3e50;
+        }
+
+        .header h1 {
+            font-size: 24px;
+            color: #2c3e50;
+            margin-bottom: 5px;
+            font-weight: 700;
+        }
+
+        .header .subtitle {
+            font-size: 14px;
+            color: #34495e;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            font-size: 10px;
+        }
+
+        .contact-info span {
+            display: flex;
+            align-items: center;
+            gap: 3px;
+        }
+
+        .section {
+            margin-bottom: 18px;
+        }
+
+        .section-title {
+            font-size: 14px;
+            color: #2c3e50;
+            font-weight: 700;
+            margin-bottom: 8px;
+            padding-bottom: 3px;
+            border-bottom: 1px solid #3498db;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .two-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .three-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 15px;
+        }
+
+        .summary {
+            text-align: justify;
+            margin-bottom: 15px;
+            font-size: 11px;
+            line-height: 1.5;
+        }
+
+        .expertise-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .expertise-item h4 {
+            color: #2c3e50;
+            font-size: 12px;
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+
+        .expertise-item ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .expertise-item li {
+            margin-bottom: 3px;
+            padding-left: 12px;
+            position: relative;
+            font-size: 10px;
+        }
+
+        .expertise-item li:before {
+            content: "▸";
+            position: absolute;
+            left: 0;
+            color: #3498db;
+            font-weight: bold;
+        }
+
+        .experience-item {
+            margin-bottom: 12px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #ecf0f1;
+        }
+
+        .experience-item:last-child {
+            border-bottom: none;
+        }
+
+        .job-title {
+            font-size: 12px;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 2px;
+        }
+
+        .company-duration {
+            font-size: 10px;
+            color: #7f8c8d;
+            margin-bottom: 5px;
+        }
+
+        .achievements {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+
+        .achievement {
+            background: #f8f9fa;
+            padding: 8px;
+            border-radius: 4px;
+            border-left: 3px solid #3498db;
+            font-size: 10px;
+        }
+
+        .achievement .icon {
+            font-size: 12px;
+            margin-right: 5px;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .project {
+            background: #f8f9fa;
+            padding: 10px;
+            border-radius: 4px;
+            border-left: 3px solid #e74c3c;
+        }
+
+        .project-title {
+            font-size: 11px;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 3px;
+        }
+
+        .project-client {
+            font-size: 9px;
+            color: #e74c3c;
+            font-weight: 500;
+            margin-bottom: 5px;
+        }
+
+        .project ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .project li {
+            font-size: 9px;
+            margin-bottom: 2px;
+            padding-left: 8px;
+            position: relative;
+        }
+
+        .project li:before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #e74c3c;
+        }
+
+        .tech-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 15px;
+        }
+
+        .tech-category h4 {
+            color: #2c3e50;
+            font-size: 11px;
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+
+        .tech-category ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .tech-category li {
+            font-size: 9px;
+            margin-bottom: 2px;
+            padding-left: 8px;
+            position: relative;
+        }
+
+        .tech-category li:before {
+            content: "▪";
+            position: absolute;
+            left: 0;
+            color: #3498db;
+        }
+
+        .education-item {
+            margin-bottom: 8px;
+        }
+
+        .degree {
+            font-size: 11px;
+            font-weight: 600;
+            color: #2c3e50;
+        }
+
+        .institution {
+            font-size: 10px;
+            color: #7f8c8d;
+        }
+
+        .strengths {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+
+        .strength {
+            font-size: 10px;
+            padding: 5px;
+            background: #f8f9fa;
+            border-radius: 3px;
+        }
+
+        .strength .icon {
+            color: #27ae60;
+            margin-right: 5px;
+        }
+
+        .personal-details {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            font-size: 10px;
+        }
+
+        .declaration {
+            text-align: center;
+            font-size: 9px;
+            color: #7f8c8d;
+            margin-top: 15px;
+            font-style: italic;
+        }
+
+        @media print {
+            .container {
+                box-shadow: none;
+                padding: 10mm;
+            }
+
+            body {
+                font-size: 10px;
+            }
+
+            .section {
+                margin-bottom: 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>JANMEJAY KUMAR</h1>
+            <div class="subtitle">Software Quality Assurance Lead | Automation Testing Expert</div>
+            <div class="contact-info">
+                <span>
+                    <!-- 📞 -->
+                    <a href="tel:+918793538280" style="text-decoration: none; color: inherit;">
+                        <img src="https://cdn-icons-png.flaticon.com/512/724/724664.png" alt="Phone"
+                            style="width:16px; vertical-align:middle; margin-right:6px;">
+                        +91-8793538280
+                    </a>
+                </span>
+
+                <span>
+                    <!-- ✉️ -->
+                    <a href="mailto:janmejay.arya@outlook.com" style="text-decoration: none; color: inherit;">
+                        <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Outlook"
+                            style="width:16px; vertical-align:middle; margin-right:6px;">
+                        janmejay.arya@outlook.com
+                    </a>
+                </span>
+
+
+                <span>
+                    <a href="https://www.linkedin.com/in/janmejay-kumar-3946bba4/" target="_blank"
+                        style="text-decoration: none; color: inherit;">
+                        <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn"
+                            style="width:16px; vertical-align:middle; margin-right:6px;">
+                        LinkedIn Profile
+                    </a>
+                </span>
+
+                <span>
+                    <!-- 📍 -->
+                    <img src="https://cdn-icons-png.flaticon.com/512/684/684908.png" alt="Location"
+                        style="width:16px; vertical-align:middle; margin-right:6px;">
+                    Bangalore, Karnataka, India
+                </span>
+
+            </div>
+
+        </div>
+
+        <div class="section">
+            <div class="section-title">Professional Summary</div>
+
+            <div class="summary">
+                <ul>
+                    <li>Results-driven <strong>Software Quality Assurance professional
+                            specializing in
+                            automation testing and
+                            framework development</strong> professional with <strong>10+ years
+                            of
+                            progressive
+                            experience</strong> in Automation Testing, QA strategy, and test leadership. Adept at
+                        architecting
+                        and implementing <strong>robust, scalable test automation
+                            frameworks</strong>
+                        across web, API, and
+                        mobile platforms.</li>
+                    <li>Demonstrated success in <strong>leading cross-functional
+                            QA teams</strong>,
+                        collaborating closely with product and engineering teams in Agile/DevOps environments to
+                        ensure
+                        high-quality software delivery.</li>
+                    <li>Demonstrates a strong passion for innovation with a track record of
+                        <strong>leveraging AI-powered tools</strong> like <strong>GitHub
+                            Copilot, Nexus Chat,</strong> and
+                            <strong>Microsoft Playwright MCP Server</strong> to drive intelligent
+                            test
+                            generation and continuous optimization.
+                            Skilled in <strong>CI/CD integration, cloud-native testing,</strong>
+                            and
+                            <strong>risk-based test planning,</strong> consistently improving test
+                            coverage,
+                            reducing manual effort,
+                            and accelerating release cycles.
+                    </li>
+                    <li> Experience delivering QA solutions for <strong>large-scale
+                            enterprise
+                            applications</strong> in domains
+                        such as finance,
+                        telecom, cloud infrastructure, and energy trading, with demonstrated success at
+                        organizations
+                        like
+                        <strong>Xpansiv, HSBC, McKinsey, VMware, and Accenture.</strong>
+                    </li>
+                    <li>
+                        Demonstrated impact includes increasing test coverage from <strong>60%
+                            to 90% in
+                            just three
+                            quarters</strong> and reducing
+                            <strong>post-release defects by 70%</strong> through strategic
+                            shift-left
+                            QA
+                            integration
+                    </li>
+                    <li>Known for <strong>mentoring QA engineers and driving adoption of
+                            modern
+                            automation practices</strong>
+                        across global
+                        teams, aligning quality efforts with evolving product goals and customer expectations.</li>
+                </ul>
+            </div>
+        </div>
+
+
+
+        <div class="section">
+            <div class="section-title">Core Expertise</div>
+            <div class="expertise-grid">
+                <div class="expertise-item">
+                    <h4 style="font-weight: 760;">Web Automation Testing</h4>
+                    <span style="font-weight: 570;">
+                        <ul>
+                            <li>Expertise in AngularJS and non-AngularJS automation tools</li>
+                            <li>Proficient in Protractor, Playwright, Cypress, WebDriverIO and WebDriverJS</li>
+                            <li>Hands-on experience with TypeScript, Jasmine, and Cucumber frameworks</li>
+                            <li>Skilled in implementing advanced Page Object Model (POM) design patterns</li>
+                        </ul>
+                    </span>
+
+                </div>
+                <div class="expertise-item">
+                    <h4 style="font-weight: 760;">AI-Powered Test Optimization</h4>
+                    <span style="font-weight: 570;">
+                        <ul>
+                            <li>Applied machine learning techniques for predictive analysis and quality trend
+                                forecasting
+                            </li>
+                            <li>Specialized in strategic test case prioritization to optimize test coverage and reduce
+                                execution time</li>
+                            <li>Experience with automated test generation leveraging tools like GitHub Copilot /
+                                Playwright
+                                MCP</li>
+                            <li>Focused on continuous improvement of QA strategies to align with evolving product and
+                                business goals</li>
+                        </ul>
+                    </span>
+
+                </div>
+                <div class="expertise-item">
+                    <h4 style="font-weight: 760;">Advanced Test Automation</h4>
+                    <span style="font-weight: 570;">
+                        <ul>
+                            <li>Connected Playwright with MCP Server to manage and track automated tests more
+                                effectively.</li>
+                            <li>Enabled real-time user action capture to streamline automated test creation and
+                                debugging
+                            </li>
+                            <li>Implemented instant script conversion for rapid automation from interactive user flows
+                            </li>
+                            <li>Seamlessly integrated test automation workflows into CI/CD pipelines for continuous and
+                                reliable quality assurance</li>
+                        </ul>
+                    </span>
+
+                </div>
+                <div class="expertise-item">
+                    <h4 style="font-weight: 760;">Comprehensive Testing</h4>
+                    <span style="font-weight: 570;">
+                        <ul>
+                            <li>API Testing using Cypress with integrated HTTP clients for robust service validation
+                            </li>
+                            <li>Mobile test automation expertise using Appium and WebDriverIO with TypeScript</li>
+                            <li>Cross-browser compatibility assurance through BrowserStack integration & docker with
+                                pipeline</li>
+                            <li>Proven track record with enterprise-grade QA delivery for high-impact projects at
+                                Xpansiv, HSBC, McKinsey and
+                                VMware</li>
+                        </ul>
+                    </span>
+
+                </div>
+            </div>
+        </div>
+
+
+        <div class="section">
+            <div class="section-title">Technical Expertise</div>
+            <div class="tech-grid">
+                <div class="tech-category">
+                    <h4>Test Automation Tools</h4>
+                    <span style="font-weight: 570;">
+                        <ul>
+                            <li>Protractor, Cypress, Playwright</li>
+                            <li>Selenium, Appium (BrowserStack)</li>
+                            <li>WebDriverIO, WebDriverJS, Ranorex Studio</li>
+                            <li>API HTTP Client (POJO Object)</li>
+                            <!-- <li>GitHub Copilot, Cloude, Playwright MCP Server</li> -->
+                        </ul>
+                    </span>
+
+                </div>
+                <div class="tech-category">
+                    <h4>Project Management &<br>AI-Powered Agent Tool</h4>
+                    <span style="font-weight: 570;">
+                        <ul>
+                            <li>JIRA, Confluence, Test Rail</li>
+                            <li>Agile Testing, Scrum, Sprint Planning</li>
+                            <!-- <li>Sprint Planning</li> -->
+                            <li>GitHub Copilot, Cloude, Playwright MCP Server</li>
+                        </ul>
+                    </span>
+                </div>
+                <div class="tech-category">
+                    <h4>Development & Integration</h4>
+                    <span style="font-weight: 570;">
+                        <ul>
+                            <li>Java, C#, TypeScript, JavaScript</li>
+                            <li>GitHub, GitLab, AWS Code Commit</li>
+                            <li>VSCode, IntelliJ, Eclipse</li>
+                            <li>Maven, Jenkins, GitHub Actions, GitLab</li>
+                        </ul>
+                    </span>
+
+                </div>
+
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">Key Achievements</div>
+            <div class="achievements">
+                <div class="achievement">
+                    <span class="icon">🏆</span><strong>Customer Delight Award (2017)</strong> - Received in first
+                    quadrant of 2017 for client appreciation on successfully handling the UK and HK implementation
+                    release in production from automation
+                </div>
+                <div class="achievement">
+                    <span class="icon">🏆</span><strong>Surpass Award</strong> - Awarded for designing an AI-powered
+                    automation framework widely adopted across multiple projects, significantly boosting test efficiency
+                    and consistency while reducing maintenance through intelligent test generation and self-healing
+                    capabilities.
+                </div>
+                <div class="achievement">
+                    <span class="icon">⭐</span><strong>Star of the Month</strong> - Awarded for successful delivery of
+                    one of the finest projects in Accenture for GSK Client.
+                </div>
+                <div class="achievement">
+                    <span class="icon">🚀</span><strong>Best Performance (3x)</strong> - Awarded 3 times in Synechron
+                    for framework creation and maintenance.
+                </div>
+
+            </div>
+        </div>
+
+
+        <!-- <div class="section">
+            <div class="section-title">Professional Experience</div>
+
+            <div class="experience-item">
+                <div class="job-title">
+                    Automation Lead |
+                    <a href="https://www.synechron.com/" target="_blank"
+                        style="font-weight: 750; text-decoration: none; color: inherit;">
+                        Synechron India Pvt. Ltd.
+                    </a>
+                </div>
+                <div class="company-duration">November 2023 – Present</div>
+                <div style="font-size: 10px;">Leading automation initiatives and AI-driven framework adoption across
+                    multiple projects</div>
+            </div>
+
+            <div class="experience-item">
+                <div class="job-title">
+                    Automation SDET Developer |
+                    <a href="https://xebia.com/" target="_blank"
+                        style="font-weight: 750; text-decoration: none; color: inherit;">
+                        Xebia Architect India Pvt. Ltd.
+                    </a>
+                </div>
+                <div class="company-duration">May 2021 – October 2023</div>
+                <div style="font-size: 10px;">Developed robust automation frameworks and enhanced software reliability
+                </div>
+            </div>
+
+            <div class="experience-item">
+                <div class="job-title">
+                    Senior Development Test Engineer |
+                    <a href="https://www.encora.com/" target="_blank"
+                        style="font-weight: 750; text-decoration: none; color: inherit;">
+                        Encora Inc.
+                    </a>
+                </div>
+                <div class="company-duration">July 2020 – May 2021</div>
+                <div style="font-size: 10px;">Optimized test strategies and implemented comprehensive QA protocols</div>
+            </div>
+
+            <div class="experience-item">
+                <div class="job-title">
+                    Senior Software Test Analyst |
+                    <a href="https://www.accenture.com/in-en" target="_blank"
+                        style="font-weight: 750; text-decoration: none; color: inherit;">
+                        Accenture India Pvt. Ltd.
+                    </a>
+                </div>
+                <div class="company-duration">December 2018 – July 2020</div>
+                <div style="font-size: 10px;">Analyzed testing methodologies and led cross-functional testing
+                    initiatives</div>
+            </div>
+
+            <div class="experience-item">
+                <div class="job-title">
+                    Associate Consultant |
+                    <a href="https://www.capgemini.com/in-en/" target="_blank"
+                        style="font-weight: 750; text-decoration: none; color: inherit;">
+                        Capgemini India Pvt. Ltd.
+                    </a>
+                </div>
+                <div class="company-duration">March 2015 – November 2018</div>
+                <div style="font-size: 10px;">Developed automation solutions for enterprise digital transformation
+                    projects</div>
+            </div>
+        </div> -->
+
+
+        <div class="section">
+            <div class="section-title">Professional Experience</div>
+
+            <style>
+                .experience-table {
+                    width: 100%;
+                    border-collapse: collapse;
+                    margin-top: 10px;
+                    /* Less margin */
+                }
+
+                .experience-table tr {
+                    border-bottom: 1px solid #ddd;
+                }
+
+                .experience-role {
+                    text-align: left;
+                    padding: 6px 8px;
+                    /* Reduced padding */
+                    vertical-align: top;
+                }
+
+                .experience-date {
+                    text-align: right;
+                    padding: 6px 8px;
+                    /* Reduced padding */
+                    vertical-align: top;
+                    font-size: 12px;
+                    color: #888;
+                    white-space: nowrap;
+                }
+
+                .job-desc {
+                    font-size: 11px;
+                    color: #555;
+                    margin-top: 2px;
+                    /* Tighter margin */
+                }
+
+                .company-link {
+                    font-weight: 750;
+                    text-decoration: none;
+                    color: inherit;
+                }
+
+                @media (max-width: 600px) {
+
+                    .experience-table,
+                    .experience-table tr,
+                    .experience-table td {
+                        display: block;
+                        width: 100%;
+                    }
+
+                    .experience-date {
+                        text-align: left;
+                        padding-top: 4px;
+                        color: #aaa;
+                    }
+                }
+            </style>
+
+            <table class="experience-table">
+                <tr>
+                    <td class="experience-role">
+                        Automation Lead |
+                        <a href="https://www.synechron.com/" target="_blank" class="company-link">Synechron India Pvt.
+                            Ltd.</a>
+                        <div class="job-desc">Leading automation initiatives and AI-driven framework adoption across
+                            multiple projects</div>
+                    </td>
+                    <td class="experience-date">Nov 2023 – Present</td>
+                </tr>
+                <tr>
+                    <td class="experience-role">
+                        Automation SDET Developer |
+                        <a href="https://xebia.com/" target="_blank" class="company-link">Xebia Architect India Pvt.
+                            Ltd.</a>
+                        <div class="job-desc">Developed robust automation frameworks and enhanced software reliability
+                        </div>
+                    </td>
+                    <td class="experience-date">May 2021 – Oct 2023</td>
+                </tr>
+                <tr>
+                    <td class="experience-role">
+                        Senior Development Test Engineer |
+                        <a href="https://www.encora.com/" target="_blank" class="company-link">Encora Inc.</a>
+                        <div class="job-desc">Optimized test strategies and implemented comprehensive QA protocols</div>
+                    </td>
+                    <td class="experience-date">Jul 2020 – May 2021</td>
+                </tr>
+                <tr>
+                    <td class="experience-role">
+                        Senior Software Test Analyst |
+                        <a href="https://www.accenture.com/in-en" target="_blank" class="company-link">Accenture India
+                            Pvt. Ltd.</a>
+                        <div class="job-desc">Analyzed testing methodologies and led cross-functional testing
+                            initiatives</div>
+                    </td>
+                    <td class="experience-date">Dec 2018 – Jul 2020</td>
+                </tr>
+                <tr>
+                    <td class="experience-role">
+                        Associate Consultant |
+                        <a href="https://www.capgemini.com/in-en/" target="_blank" class="company-link">Capgemini India
+                            Pvt. Ltd.</a>
+                        <div class="job-desc">Developed automation solutions for enterprise digital transformation
+                            projects</div>
+                    </td>
+                    <td class="experience-date">Mar 2015 – Nov 2018</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="section">
+            <div class="section-title">Notable Projects</div>
+            <div class="projects-grid">
+                <div class="project">
+                    <div class="project-title">CBL and RVCMC (Carbon Trading)</div>
+                    <div class="project-client">XPANSIV</div>
+                    <ul>
+                        <li>Playwright/Cypress-TypeScript framework</li>
+                        <li>iOS/Android automation with BrowserStack</li>
+                        <li>CI/CD pipeline integration</li>
+                    </ul>
+                </div>
+                <div class="project">
+                    <div class="project-title">ECI & RC (Excel and Insights)</div>
+                    <div class="project-client">McKinsey</div>
+                    <ul>
+                        <li>API-Cypress with HTTP Client</li>
+                        <li>REST services validation (JSON/XML)</li>
+                        <li>Automated pipeline jobs</li>
+                    </ul>
+                </div>
+                <div class="project">
+                    <div class="project-title">vRNI (Virtual Network Insight)</div>
+                    <div class="project-client">VMware</div>
+                    <ul>
+                        <li>Selenium, Protractor, TypeScript</li>
+                        <li>Production testing (Alpha/Beta/RTM)</li>
+                        <li>Traffic flow analysis automation</li>
+                    </ul>
+                </div>
+                <div class="project">
+                    <div class="project-title">VADM (Device Management) & SAAS (Security as a Service)</div>
+                    <div class="project-client">HSBC</div>
+                    <ul>
+                        <li>Java, Appium mobile automation</li>
+                        <li>Android web testing with reporting</li>
+                        <li>Parallel test execution</li>
+                    </ul>
+                </div>
+                <div class="project">
+                    <div class="project-title">GSP (Global Service Provider)</div>
+                    <div class="project-client">HSBC</div>
+                    <ul>
+                        <li>Java, Appium mobile automation</li>
+                        <li>Android web testing with reporting</li>
+                        <li>Write script for continuous integration module</li>
+                    </ul>
+                </div>
+                <div class="project">
+                    <div class="project-title">EOS –Zynga </div>
+                    <div class="project-client">Zynga</div>
+                    <ul>
+                        <li>Automated application module using JAVA-TestNG by writing scripts and used as framework</li>
+                        <li>Involved in Scratch implementation of framework, moved entire framework by using POM, and
+                            creating utility files and setup files.</li>
+                    </ul>
+                </div>
+                <div class="project">
+                    <div class="project-title">ALSC – DAU (Data Access utility)</div>
+                    <div class="project-client">GSK (GlaxoSmithKline)</div>
+                    <ul>
+                        <li>Java, API HTTP Client</li>
+                        <li>Using POJO Class</li>
+                        <li>Parallel test execution</li>
+                    </ul>
+                </div>
+                <div class="project">
+                    <div class="project-title">MAST (Maritime Asset Strategy Transformation)</div>
+                    <div class="project-client">Holland America Cruise Inc ( Carnival Corporation )</div>
+                    <ul>
+                        <li>Protractor-TypeScript</li>
+                        <li>Manage Regresstion and pipeline</li>
+                        <li>Involved in Regression and developing Functional Tests using JAVA-Script Gulp Automation.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="two-column">
+            <div class="section">
+                <div class="section-title">Education</div>
+                <div class="education-item">
+                    <div class="degree">Bachelor of Engineering - Computer Science</div>
+                    <div class="institution">Nagpur University, Maharashtra (2012)</div>
+                </div>
+                <div class="education-item">
+                    <div class="degree">Higher Secondary Certificate (HSC)</div>
+                    <div class="institution">CBSE Patna, Bihar (2008)</div>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-title">Professional Strengths</div>
+                <div class="strengths">
+                    <div class="strength">
+                        <span class="icon">✅</span><strong>Strategic Leadership</strong> - Innovative QA approach
+                    </div>
+                    <div class="strength">
+                        <span class="icon">✅</span><strong>Adaptability</strong> -Fast-Paced Environment Expertise
+                    </div>
+                    <div class="strength">
+                        <span class="icon">✅</span><strong>Excellence Commitment</strong> - Quality standards
+                    </div>
+                    <div class="strength">
+                        <span class="icon">✅</span><strong>Collaborative Leadership</strong> - Across Teams
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">Personal Details</div>
+            <div class="personal-details">
+                <div><strong>Date of Birth:</strong> December 2, 1991</div>
+                <div><strong>Current Location:</strong> Bangalore, Karnataka, India</div>
+            </div>
+        </div>
+
+        <div class="declaration">
+            I hereby declare that all the information provided above is true and correct to the best of my knowledge and
+            belief.
+            <br><br>
+            <strong>Janmejay Kumar</strong>
+        </div>
+    </div>
+</body>
+
+</html>
